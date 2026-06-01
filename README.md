@@ -33,11 +33,9 @@ matplotlib
 
 ## Data
 
-The raw air-quality data used in this study were obtained from the China National Environmental Monitoring Centre.
+The hourly air quality data used in this study were obtained from the China National Environmental Monitoring Centre: https://www.cnemc.cn/. 
 
-The meteorological data were obtained from the ERA5-Land hourly reanalysis dataset via the Copernicus Climate Data Store.
-
-The processed data are not included in this repository. They can be generated from the above raw data sources following the preprocessing procedure described in Section 4.1 of the manuscript.
+The meteorological data used in this study were accessed through the European Centre for Medium-Range Weather Forecasts: https://cds.climate.copernicus.eu/.
 
 Expected data directory structure:
 
