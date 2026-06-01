@@ -1,0 +1,7 @@
+torch
+numpy
+pandas
+scikit-learn
+netCDF4
+haversine
+matplotlib
