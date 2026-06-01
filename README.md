@@ -7,9 +7,9 @@ CP-DFNet is designed for multi-site and multi-horizon PM2.5 forecasting. It cons
 ## Files
 
 * `main.py`: training and evaluation script.
-* `model.py`: implementation of CP-DFNet, including the local branch, global branch, critical path module, and adaptive fusion module.
-* `attention.py`: self-attention layers used in the global branch.
-* `Importdata.py`: data loading, preprocessing, station matching, adjacency construction, and Global Z-score normalization.
+* `model.py`: implementation of CP-DFNet
+* `attention.py`: self-attention layers used in CP-DFNet.
+* `Importdata.py`: data loading and preprocessing
 
 ## Requirements
 
@@ -43,17 +43,17 @@ Expected data directory structure:
 
 ```text
 dataset/
-└── CSJ_91stations/
-    ├── processed_meteroloy_data_ws+wd/
+└── stations/
+    ├── meteroloy_data/
     │   ├── m202301.nc
     │   ├── ...
     │   └── m202412.nc
-    ├── CSJ_pollute_data/
-    │   ├── CSJ_AQI_91stations_2023.csv
-    │   ├── CSJ_AQI_91stations_2024.csv
+    ├── pollute_data/
+    │   ├── AQI_stations_2023.csv
+    │   ├── AQI_stations_2024.csv
     │   ├── ...
-    │   └── CSJ_PM2.5_91stations_2024.csv
-    └── CSJ_91stationcoordinates.csv
+    │   └── PM2.5_stations_2024.csv
+    └── stationcoordinates.csv
 ```
 
 ## Usage
@@ -73,8 +73,3 @@ python main.py --use_critical_paths --input_len 48 --out_len 6
 python main.py --use_critical_paths --input_len 48 --out_len 12
 python main.py --use_critical_paths --input_len 48 --out_len 24
 ```
-
-## Notes
-
-The default data split is 60% for training, 20% for validation, and 20% for testing. Global Z-score normalization is applied using the mean and standard deviation computed from the training set.
-
